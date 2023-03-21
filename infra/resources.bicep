@@ -2,6 +2,9 @@ param name string
 param location string
 param resourceToken string
 param tags object
+
+@secure()
+param pgAdminUser = 'admin${uniqueString(resourceGroup().id)}'
 @secure()
 param pgAdminPassword string
 @secure()
@@ -12,7 +15,6 @@ var prefix = '${name}-${resourceToken}'
 var pgServerName = '${prefix}-postgres-server'
 var databaseSubnetName = 'database-subnet'
 var webappSubnetName = 'webapp-subnet'
-var pgAdminUser = 'admin${uniqueString(resourceGroup().id)}'
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: '${prefix}-vnet'
