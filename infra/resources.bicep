@@ -4,8 +4,6 @@ param resourceToken string
 param tags object
 
 @secure()
-param pgAdminUser = 'admin${uniqueString(resourceGroup().id)}'
-@secure()
 param pgAdminPassword string
 @secure()
 param secretKey string
@@ -198,7 +196,7 @@ resource postgresServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-01-20-pr
   }
   properties: {
     version: '12'
-    administratorLogin: pgAdminUser
+    administratorLogin: 'django'
     administratorLoginPassword: pgAdminPassword
     storage: {
       storageSizeGB: 128
