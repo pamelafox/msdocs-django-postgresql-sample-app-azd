@@ -94,6 +94,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
       alwaysOn: true
       linuxFxVersion: 'PYTHON|3.9'
       ftpsState: 'Disabled'
+      minTlsVersion: '1.2'
       appCommandLine: 'startup.sh'
     }
     httpsOnly: true
