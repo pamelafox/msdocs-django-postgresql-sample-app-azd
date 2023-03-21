@@ -11,7 +11,7 @@ param location string
 
 @secure()
 @description('PostGreSQL Server administrator password')
-param databasePassword string
+param pgAdminPassword string
 
 @secure()
 @description('Django SECRET_KEY for securing signed data')
@@ -34,7 +34,7 @@ module resources 'resources.bicep' = {
     location: location
     resourceToken: resourceToken
     tags: tags
-    databasePassword: databasePassword
+    pgAdminPassword: pgAdminPassword
     secretKey: secretKey
   }
 }

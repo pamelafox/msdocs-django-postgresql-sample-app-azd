@@ -8,7 +8,7 @@
       "location": {
         "value": "${AZURE_LOCATION}"
       },
-      "databasePassword": {
+      "pgAdminPassword": {
         "value": "$(secretOrRandomPassword)"
       },
       "secretKey": {
